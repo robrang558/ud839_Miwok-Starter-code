@@ -27,6 +27,9 @@ public class Word {
     /** Miwok translation for the word */
     private String mMiwokTranslation;
 
+    // Add Audio Resource
+    private int mAudioResourceId;
+
     // Image Resource
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
@@ -40,9 +43,10 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -54,10 +58,11 @@ public class Word {
      *
      * @param imageResourceID is the drawable resource ID for the image asset.
      */
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceID;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -84,6 +89,11 @@ public class Word {
     // Returns weather or not there is an image for the word
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
+
+    // Returns audio resource ID
+    public int getmAudioResourceId(){
+        return mAudioResourceId;
     }
 
 }
