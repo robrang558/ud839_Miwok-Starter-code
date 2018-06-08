@@ -115,6 +115,8 @@ public class ColorsActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     @Override
